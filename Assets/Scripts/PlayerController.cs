@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /**
+     *  Thanks Waldo for the Code :D
+     *  Code based in the video "Super Mario - Running Tutorial in Unity" and "A Perfect Jump - A Complete Guide",
+     *   check'em out in this URL :D 
+     *   https://www.youtube.com/watch?v=USLp-4iwNnQ
+     *   https://www.youtube.com/watch?v=RPdn3r_tqcM
+     *
+     */
+
     #region Movement
     [Header("Horizontal Movement")]
     [Range (5f,15f)][SerializeField]
@@ -89,8 +98,6 @@ public class PlayerController : MonoBehaviour
     private void ModifyPhysics()
     {
         bool changingDirections = (direction.x > 0 && rb2d.velocity.x < 0) || (direction.x < 0 && rb2d.velocity.x > 0);
-
-        //rb2d.drag = Mathf.Abs(direction.x) < 0.4f || changingDirections ? linearDrag : 0f;
 
         if (onGround)
         {
